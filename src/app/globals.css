@@ -1,0 +1,242 @@
+:root {
+  --bg-0: #f4f8f1;
+  --bg-1: #def0e8;
+  --bg-2: #c7deef;
+  --ink: #132228;
+  --ink-soft: #33515a;
+  --line: #9db6be;
+  --surface: rgba(248, 254, 250, 0.83);
+  --surface-strong: #ffffff;
+  --ok: #1f8f58;
+  --warn: #b86b1e;
+  --danger: #9f2f33;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 10%, #ffffff 0%, transparent 26%),
+    radial-gradient(circle at 95% 18%, #d5edf0 0%, transparent 34%),
+    linear-gradient(135deg, var(--bg-0) 0%, var(--bg-1) 52%, var(--bg-2) 100%);
+  font-family: var(--font-title), sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  width: min(1120px, 94vw);
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(19, 34, 40, 0.14);
+}
+
+h1,
+h2,
+h3,
+button,
+label,
+select,
+input,
+.badge {
+  font-family: var(--font-title), sans-serif;
+}
+
+code,
+.small,
+.metric-sub,
+.mono {
+  font-family: var(--font-mono), monospace;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+p {
+  color: var(--ink-soft);
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid.cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-strong);
+  padding: 0.95rem 1rem;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  background: #f6fbff;
+}
+
+.badge.ok {
+  background: #e7f8ef;
+  border-color: #86c9a4;
+  color: var(--ok);
+}
+
+.badge.warn {
+  background: #fff4e7;
+  border-color: #eccb9d;
+  color: var(--warn);
+}
+
+.badge.danger {
+  background: #ffeaea;
+  border-color: #e7a8ab;
+  color: var(--danger);
+}
+
+button {
+  border: 1px solid #31535d;
+  background: #21414b;
+  color: #f8fdff;
+  border-radius: 10px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+button.secondary {
+  background: #f0f8fb;
+  color: #24414a;
+  border-color: #9bb4bc;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+select {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.45rem 0.55rem;
+  background: #ffffff;
+}
+
+.metric-value {
+  font-size: 1.42rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.metric-sub {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: #526c75;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.list li {
+  border: 1px solid #d2e1e6;
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  background: #fbfeff;
+}
+
+.list-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.list-sub {
+  margin-top: 0.2rem;
+  font-size: 0.82rem;
+  color: #57727c;
+}
+
+.notice {
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #c8d7dc;
+  background: #f4fbff;
+  color: #35505a;
+  font-size: 0.84rem;
+}
+
+.notice.error {
+  border-color: #e0a8aa;
+  background: #fff1f1;
+  color: #7d2f33;
+}
+
+.footer-note {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: #55717b;
+}
+
+@media (max-width: 720px) {
+  main {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    padding: 1rem 0.8rem 1.2rem;
+  }
+}
